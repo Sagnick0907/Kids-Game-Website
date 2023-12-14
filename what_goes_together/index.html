@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Pairings Card Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Perfect Pairings Card Game</h1>
+    <div class="difficulty-buttons">
+        <button class="difficulty-button" onclick="startGame('easy')" onmousedown="playClickSound()">Start</button>
+    </div>
+    <button id="stopButton" onclick="stopGame()" onmousedown="playClickSound()" style="display: none;">Stop
+        Game</button>
+    <div id="game-container" class="center-container"></div>
+    <!-- Add this div to your HTML body -->
+    <div id="custom-alert-overlay">
+        <div id="custom-alert-box">
+            <span id="custom-alert-message"></span>
+            <button onclick="closeCustomAlert()">OK</button>
+        </div>
+    </div>
+    <audio id="clickSound">
+        <source src="../audio/button_click_sound.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="flipSound">
+        <source src="../audio/flipcard.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="winner">
+        <source src="../audio/winner.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="../audio/starry.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="timer"></div>
+    <div id="score"></div>
+    <button id="backButton" onclick="goBack()" onmousedown="playClickSound()">Back</button>
+    <script src="game3script.js"></script>
+    <script>
+        function goBack() {
+            window.location.href = "http://127.0.0.1:5500/main.html";
+        }
+
+        function playClickSound() {
+            const clickSound = document.getElementById('clickSound');
+            clickSound.play();
+        }
+
+    </script>
+</body>
+
+</html>

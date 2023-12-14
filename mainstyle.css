@@ -1,0 +1,279 @@
+body {
+  /* background-image: url('https://drive.google.com/uc?export=view&id=1B9UNmbeEi6e7K1Nx_Zwd-xpqR4yC_fLQ'); */
+  /* background-image: url('./mainbg.mp4'); */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+audio {
+  position: absolute;
+  left: -9999px;
+  visibility: hidden;
+}
+
+.container {
+  padding: 20px;
+  background-color: rgba(43, 43, 43, 0.4); /* Adjust the alpha channel as needed */
+  margin-right: 150px;
+  text-align: center;
+  margin-left: 150px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  display: inline-block;
+  border: 2px solid;
+}
+
+
+h1 {
+  color: #f4c531;
+  text-align: center;
+}
+
+.game-buttons {
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+  justify-content: space-between;
+}
+
+.game-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-size: 20px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  flex: 1;
+  margin: 0 10px;
+  color: yellow;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+
+  /* Apply an animated gradient background with various colors */
+  background: linear-gradient(90deg, #34008d, #03a9f4, #34008d);
+  background-size: 300% 300%;
+  animation: gradientAnimation 4s infinite;
+  overflow: hidden;
+}
+
+/* Pseudo-element for the ripple effect */
+.game-button::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  transform-origin: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+
+/* Hover effect for the button */
+.game-button:hover {
+  transform: scale(1.05);
+}
+
+/* Keyframes for the ripple animation */
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Keyframes for the gradient animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.game-button img {
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  flex: 1;
+  /* Use Flexbox for the images */
+}
+
+body {
+  background-color: black;
+}
+
+.hamburger__toggle {
+  display: block;
+  position: relative;
+  background-color: #3d3d3d;
+  border: 2px solid black;
+  width: 60px;
+  height: 60px;
+  margin: 50px auto;
+  border-radius: 50%;
+  border: none;
+}
+
+/* give the span element and related pseudo-elements the appearance of white lines */
+.hamburger__icon,
+.hamburger__icon::before,
+.hamburger__icon::after {
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  border-radius: 4px;
+  background-color: white;
+}
+
+/* center the span element in the middle of its containing button */
+.hamburger__icon {
+  top: calc(50% - 2px);
+  left: calc(50% - 15px);
+}
+
+/* position the two pseudo-elements to the very left */
+.hamburger__icon::before,
+.hamburger__icon::after {
+  content: "";
+  left: 0;
+}
+
+/* this is the top dash of the hamburger */
+.hamburger__icon::before {
+  bottom: 8px;
+}
+
+/* this is the bottom dash of the hamburger */
+.hamburger__icon::after {
+  top: 8px;
+}
+
+/* rotate middle dash of hamburger */
+.hamburger__toggle:hover .hamburger__icon {
+  height: 5px;
+  width: 54px;
+  left: 5px;
+  top: calc(50% - 2px);
+  transform: rotate(-45deg);
+  background-color: red;
+}
+
+/* rotate bottom dash of hamburger counter clockwise */
+.hamburger__toggle:hover .hamburger__icon::after {
+  width: 54px;
+  height: 5px;
+  top: -1px;
+  transform: rotate(-270deg);
+  background-color: red;
+}
+
+/* hide the top dash by scaling it to 0 */
+.hamburger__toggle:hover .hamburger__icon::before {
+  transform: scale(0);
+}
+
+/* TRANSITION */
+/* adjust duration to see it happen slower */
+.hamburger__icon,
+.hamburger__icon::after {
+  transition: all 0.3s linear;
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.waviy {
+  position: relative;
+  font-size: 40px;
+  color: #fff;
+  margin-top: 10px;
+  /* Adjust margin as needed */
+}
+
+.waviy span {
+  display: inline-block;
+  text-transform: uppercase;
+  animation: flip 2s infinite;
+  animation-delay: calc(0.2s * var(--i));
+}
+
+@keyframes flip {
+
+  0%,
+  80% {
+    transform: rotateY(360deg)
+  }
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+  .game-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .waviy {
+    font-size: 24px;
+    margin-top: 5px;
+  }
+
+  .hamburger__toggle {
+    display: block;
+  }
+
+  .container {
+    margin: 20px;
+  }
+}
+
+Video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.content {
+  text-align: center;
+  padding: 100px;
+  color: white;
+  z-index: 1;
+}

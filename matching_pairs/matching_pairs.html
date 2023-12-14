@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memory Game</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="matching_pairs_style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="level-text">Easy Level</div>
+    <div class="stats-container">
+      <div id="moves-count"></div>
+      <div id="time"></div>
+    </div>
+    <div class="game-container"></div>
+    <button id="stop" class="hide">Stop Game</button>
+  </div>
+  <div class="controls-container">
+    <p id="result"></p>
+    <button id="start">Start Game</button>
+    <button id="back">Back</button>
+  </div>
+  <audio id="clickSound">
+    <source src="../audio/button_click_sound.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <audio id="flipSound">
+    <source src="../audio/flipcard.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <audio id="successSound">
+    <source src="../audio/success.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <audio id="winner">
+    <source src="../audio/winner.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <audio id="backgroundMusic" autoplay loop>
+    <source src="../audio/playful.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+  <div id="custom-alert" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>CONGRATULATIONS! YOU WON!</h2>
+      <p id="modal-content"></p>
+      <div class="fun-facts-container">
+        <p id="test-fact">This is a test fact.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="matching_pairs_script.js"></script>
+</body>
+
+</html>

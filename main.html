@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="mainstyle.css">
+    <title>Choose a Game</title>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="https://drive.google.com/uc?export=view&id=1Q1s49xfFzYPdQT4WCX3j04cY2ipClR7r" type="video/mp4">
+    </video>
+    <div class="container">
+        <div class="waviy">
+            <span style="--i:1">L</span>
+            <span style="--i:2">E</span>
+            <span style="--i:3">T</span>
+            <span style="--i:4">'</span>
+            <span style="--i:5">S</span>
+            <span style="--i:6"></span>
+            <span style="--i:7">P</span>
+            <span style="--i:8">L</span>
+            <span style="--i:9">A</span>
+            <span style="--i:10">Y</span>
+        </div>
+        <button class="hamburger__toggle" id="closeButton" style="position: absolute; top: 10px; right: 10px;">
+            <span class="hamburger__icon"></span>
+        </button>
+        <h1>Choose a Game</h1>
+        <div class="game-buttons">
+            <a class="game-button" href="/matching_pairs/matching_pairs.html">
+                <img src="https://drive.google.com/uc?export=view&id=1T8cK374LiDTri-_s5Q62eyA8qYTs_GGw"
+                    alt="Matching Pairs">
+                Matching Pairs
+            </a>
+            <a class="game-button" href="/Find_the_difference/index.html">
+                <img src="https://drive.google.com/uc?export=view&id=1m-f0qMkHThW8QdshpYfPV1KZmLmiZs1b"
+                    alt="Spot the Difference">
+                Spot the Difference
+            </a>
+            <a class="game-button" href="/what_goes_together/index.html">
+                <img src="https://drive.google.com/uc?export=view&id=1E0bpCsgkn-uHMgTj1vC1C8g4GSJmOzQj"
+                    alt="What Goes Together">
+                What Goes Together
+            </a>
+        </div>
+        <audio id="clickSound">
+            <source src="./audio/button_click_sound.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="backgroundMusic" autoplay loop>
+            <source src="https://drive.google.com/uc?export=view&id=1l9CW5h2cyaVH14QFyyOdix3XisMWF_YG" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttons = document.querySelectorAll('.game-button');
+            const clickSound = document.getElementById('clickSound');
+
+            buttons.forEach(function (button) {
+                button.addEventListener('click', function (event) {
+                    event.preventDefault(); // Prevent default link behavior
+                    clickSound.currentTime = 0;
+                    clickSound.play();
+                    setTimeout(function () {
+                        window.location.href = button.getAttribute('href'); // Redirect after 400ms
+                    }, 400);
+                });
+            });
+
+            // Add functionality to the close button
+            document.getElementById('closeButton').addEventListener('click', function () {
+                const newWindow = window.open('', '_self');
+                newWindow.close();
+            });
+        });
+    </script>
+</body>
+
+</html>
